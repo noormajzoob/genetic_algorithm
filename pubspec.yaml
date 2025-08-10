@@ -1,7 +1,7 @@
 name: genetic_algorithm
-description: A starting point for Dart libraries or applications.
+description: It is fast, easy to use and extensable genetic algorithm implementaion for dart.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/noormajzoob/genetic_algorithm
 
 environment:
   sdk: ^3.5.4
