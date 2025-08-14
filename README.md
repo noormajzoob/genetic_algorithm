@@ -104,7 +104,7 @@ Future<void> main() async {
 
 ---
 
-## Plus-Selection Engine (\u201c(\u03bc+\u03bb)\u201d-style)
+## Plus-Selection Engine
 
 Keeps the best individuals from **parents + offspring**.
 
@@ -117,22 +117,6 @@ final plusEngine = PlusSelectionStrategyEngine<String>(
 );
 
 final bestPlus = await plusEngine.evolve(settings);
-```
-
----
-
-## Architecture
-
-```
-PopulationFactory → initial Population
-        ↓
-FitnessEvaluator → assigns fitness
-        ↓
-[loop]
-  SelectionStrategy → Crossover → Mutation → Next population
-  (Generational) OR (Plus-selection combines parents + offspring, then selects best)
-        ↓
-TerminationCondition → stop
 ```
 
 ---
@@ -245,9 +229,3 @@ class MyCrossover<T> extends Crossover<T> {
 * Use a small `eliteCount` (e.g., 1–5% of population) to preserve top solutions.
 * Tune `probability` on operators: high crossover (≈0.8–0.95) and moderate mutation (≈0.05–0.3) are good starting points.
 * Combine multiple termination conditions for robustness.
-
----
-
-## License
-
-MIT
